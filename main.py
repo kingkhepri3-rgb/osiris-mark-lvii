@@ -1465,6 +1465,15 @@ class JarvisLive:
         parts = [time_ctx, identity_ctx]
         if mem_str:
             parts.append(mem_str)
+        # Tut link (docs/tut-link-design.md): standing rules, business facts and a
+        # digest of today's state, read from ~/Tut-Shared/mirror. Never raises.
+        try:
+            from core.tut_context import context_block
+            _tut_ctx = context_block()
+            if _tut_ctx:
+                parts.append(_tut_ctx)
+        except Exception as _e:
+            print(f"[Tut] link not loaded: {_e}")
         parts.append(sys_prompt)
 
         cfg = dict(

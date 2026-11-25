@@ -1,0 +1,94 @@
+{
+ "version": 1,
+ "quiet_hours": "",
+ "routines": [
+  {
+   "id": "r1c044f",
+   "name": "Opening briefing",
+   "kind": "builtin",
+   "builtin": "briefing",
+   "text": "",
+   "trigger": {
+    "type": "startup"
+   },
+   "options": {
+    "news": true,
+    "news_topic": "top world news today",
+    "extra": ""
+   },
+   "deliver": "voice",
+   "agent": "general",
+   "minutes": 10,
+   "quiet": false,
+   "system": true,
+   "enabled": true,
+   "source": "",
+   "created": 1795465382.941529,
+   "next_ts": 0.0,
+   "last_run": 1795617892.523338,
+   "runs": 15,
+   "last_result": "ran"
+  },
+  {
+   "id": "r1c7c38",
+   "name": "Check-in",
+   "kind": "builtin",
+   "builtin": "checkin",
+   "text": "",
+   "trigger": {
+    "type": "idle",
+    "minutes": 15,
+    "cooldown": 20
+   },
+   "options": {
+    "focuses": [
+     "The user's active projects or goals, if any are stored: ask how something is going, or offer a relevant tip.",
+     "The time of day and the user's wellbeing: a warm check-in, a reminder to take a break, or something timely.",
+     "Something genuinely interesting or useful — a fact, a suggestion, or a question based on what you know about this person."
+    ]
+   },
+   "deliver": "voice",
+   "agent": "general",
+   "minutes": 10,
+   "quiet": true,
+   "system": true,
+   "enabled": true,
+   "source": "",
+   "created": 1795465382.9417942,
+   "next_ts": 0.0,
+   "last_run": 1795616883.1137779,
+   "runs": 44,
+   "last_result": "ran"
+  },
+  {
+   "id": "r2fa031",
+   "name": "News watch",
+   "kind": "builtin",
+   "builtin": "news_watch",
+   "text": "",
+   "trigger": {
+    "type": "time",
+    "rule": {
+     "type": "interval",
+     "minutes": 30,
+     "start": "00:00",
+     "end": "23:59"
+    }
+   },
+   "options": {},
+   "deliver": "voice",
+   "agent": "general",
+   "minutes": 10,
+   "quiet": true,
+   "system": true,
+   "enabled": true,
+   "source": "",
+   "created": 1795465382.942061,
+   "next_ts": 1795618800.0,
+   "last_run": 1795617000.966573,
+   "runs": 35,
+   "last_result": "ran"
+  }
+ ],
+ "seeded": true
+}
